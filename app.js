@@ -6,10 +6,10 @@ const PORT = process.env.PORT || 5000;
 
 // Database connection configuration
 const dbConfig = {
-    host: process.env.DB_HOST,
-    user: process.env.DB_USER,
-    password: process.env.DB_PASSWORD,
-    database: process.env.DB_NAME
+    host: "nodeapidb.cdhkcbdix0dn.us-east-1.rds.amazonaws.com",
+    user: "root",
+    password: "Lavi2004",
+    database: "nodeapidb"
 };
 
 // Create a MySQL connection
@@ -26,7 +26,7 @@ connection.connect(err => {
 
 // Define a route to fetch data
 app.get('/fetch-data', (req, res) => {
-    const query = 'SELECT * FROM Student'; // Replace 'your_table' with your actual table name
+    const query = 'SELECT * FROM Details'; // Replace 'your_table' with your actual table name
     connection.query(query, (err, results) => {
         if (err) {
             console.error('Error fetching data:', err);
